@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#eee;
+  display:flex;
+  
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+form{
+  background:white;
+  padding:20px;
+  width:300px;
+  border-radius:8px;
+}
+
+label{
+  display:block;
+  margin-top:10px;
+}
+
+input, select{
+  width:100%;
+  padding:8px;
+  margin-top:5px;
+}
+
+button{
+  margin-top: 10px;
+  background-color: rgb(17, 124, 238);
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<form>
+<h2>Registration</h2>
+
+<label >Username</label>
+<input type="text">
+
+<label>Email</label>
+<input type="email">
+
+<label>Password</label>
+<input type="password">
+
+<label>Mobile</label>
+<input type="number">
+
+<label>Sex</label>
+<select>
+  <option>Male</option>
+  <option>Female</option>
+</select>
+
+<button type="submit">Sign Up</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.move {
+    width: 100%;
+    overflow: hidden;
+}
+
+.text {
+    display: inline-block;
+    animation: moveText 5s linear infinite;
+}
+
+@keyframes moveText {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+</style>
+</head>
+<body>
+
+<div class="move">
+    <div class="text">Moving Text Using CSS</div>
+</div>
+
+</body>
+</html>

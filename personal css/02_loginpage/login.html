@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("../images/second.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        .card{
+            background-color: #d5d4d4;
+            border-radius: 20px;
+            
+
+             background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+        border-radius: 20px;
+        padding: 40px;
+        width: 300px;
+
+         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+         border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h2{
+            color: rgb(58, 58, 217);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+           
+
+        }
+        input{
+            background-color: #d5d4d4;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            border-color: #1a1a1a;
+        }
+        button{
+         background-color: rgb(17, 124, 238);
+         color: #fff;
+         padding: 10px;
+         border-radius: 8px;
+        }
+        button:hover{
+            background-color: rgb(28, 10, 228);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Login</h2>
+           <form onsubmit="return validateLogin()">
+             <input type="text" id="email" placeholder="email id">
+             <input type="password" id="password" placeholder="password">
+             <button type="submit">Login</button>
+           </form>
+
+            <p id="error" style="color:red; margin-top:10px;"></p>
+
+    </div>
+</body>
+<script>
+function validateLogin() {
+
+    // Step 1: Get input values
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    // Step 2: Email pattern
+    // Explanation below
+    let emailPattern = /^[a-zA-Z0-9]+@gmail\.com$/;
+
+    // Step 3: Special character pattern for password
+    let specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+
+    // Step 4: Email validation
+    if (!emailPattern.test(email)) {
+        document.getElementById("error").innerText =
+            "Invalid email! Use format: abc123@gmail.com";
+        return false;
+    }
+
+    // Step 5: Password length check
+    if (password.length < 6) {
+        document.getElementById("error").innerText =
+            "Password must be at least 6 characters long";
+        return false;
+    }
+
+    // Step 6: Password special character check
+    if (!specialCharPattern.test(password)) {
+        document.getElementById("error").innerText =
+            "Password must contain at least one special character";
+        return false;
+    }
+
+    // Step 7: All checks passed
+    alert("Login successful!");
+    return true;
+}
+</script>
+
+</html>
