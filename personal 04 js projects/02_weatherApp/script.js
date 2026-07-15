@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function(){
         showError();
      }
     })
+
+
     async function fetchWeatherData(city){
      //get's the data
      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
@@ -35,8 +37,10 @@ document.addEventListener('DOMContentLoaded', function(){
         
      }
      const data = await response.json()
-        return data
+     return data
     }
+
+
     function displayWeatherData(data){
     //display data
     console.log(data)
@@ -49,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function(){
      weatherInfo.classList.remove('hidden')
      errorMessage.classList.add('hidden')
     }
+
+
+
     function showError(){
         weatherInfo.classList.add('hidden') //classList lets you add, remove, or toggle CSS classes. so according to css, this will be hidden , this is done before making api calls so that , ui looks clean
         errorMessage.classList.remove('hidden')
